@@ -5,12 +5,10 @@ using namespace std;
 
 int getRegInfo (int, int, int, int, int);
 bool isLower ();
-void showLowest ();
+void showLowest (int, int, int, int, int, int);
 
 int main ()
 {
-  int north, south, central, east, west = 0;
-  int lowest = 0;
 
   cout<< "We're going to find the safest driving area in a given city" << endl;
 
@@ -21,10 +19,12 @@ int main ()
   bool isLower (bool);
 
   cout<< "Finally!" << endl;
+  
 
   void showLowest ();
 
   cout<< "End program"<< endl;
+  return 0;
 }
 
 int getRegInfo ( int north, int south, int central, int east, int west)
@@ -66,31 +66,30 @@ int getRegInfo ( int north, int south, int central, int east, int west)
       int accidents = 900;
       return lowest <= accidents;
       }
-void showLowest () {
+void showLowest (int north, int south, int central, int east, int west, int lowest) {
         if (north != lowest){
-      north = accidents;
+      north = lowest;
       cout<< " North is the region with the lowest accidents"<< endl;
         }
       if (south != lowest)
       {
-        south = accidents;
+        south = lowest;
         cout<< "South is the region with the lowest accidents"<< endl;
         }
       if (central != lowest)
       {
-        central = accidents;
+        central = lowest;
         cout<< "Cenral is the region with the lowest accidents"<< endl;
       }
     if ( east != lowest)
     {
-      east = accidents;
+      east = lowest;
       cout<< "East is the region with the lowest accidents"<< endl;
     }
     if (west != lowest)
     {
-      west = accidents;
+      west = lowest;
       cout<< "West is the region with the lowest accidents"<< endl;
     }
   cout<< " with"<< lowest<<" accidents per year."<< endl;
-  return 0;
 }
